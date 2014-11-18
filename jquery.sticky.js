@@ -47,6 +47,8 @@
         else {
           var newTop = documentHeight - s.stickyElement.outerHeight()
             - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+          if (s.wrapperElement !== undefined)
+            newTop = newTop - (documentHeight - (s.wrapperElement.offsetHeight + s.wrapperElement.offsetTop));
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
           } else {
@@ -108,7 +110,8 @@
             stickyWrapper: stickyWrapper,
             className: o.className,
             getWidthFrom: o.getWidthFrom,
-            responsiveWidth: o.responsiveWidth
+            responsiveWidth: o.responsiveWidth,
+            wrapperElement: o.wrapperElement
           });
         });
       },
