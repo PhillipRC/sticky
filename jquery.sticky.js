@@ -48,7 +48,7 @@
           var newTop = documentHeight - s.stickyElement.outerHeight()
             - s.topSpacing - s.bottomSpacing - scrollTop - extra;
           if (s.wrapperElement !== undefined)
-            newTop = newTop - (documentHeight - (s.wrapperElement.offsetHeight + s.wrapperElement.offsetTop));
+            newTop -= (documentHeight - (s.wrapperElement.offsetHeight + s.wrapperElement.offsetTop));
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
           } else {
